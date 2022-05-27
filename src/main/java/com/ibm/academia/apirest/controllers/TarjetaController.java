@@ -37,10 +37,10 @@ public class TarjetaController {
         return new ResponseEntity<>(tarjetas, HttpStatus.OK);
     }
 
-    @PostMapping("/obtener-recomendacion")
-    public ResponseEntity<?> obtenerRecomendacionTarjetas(@RequestParam(name = "pasion") String pasion,
-                                                          @RequestParam(name = "edad") Integer edad,
-                                                          @RequestParam(name = "sueldo") Double sueldo) {
+    @GetMapping("/obtener-recomendacion")
+    public ResponseEntity<?> obtenerRecomendacionTarjetas(@RequestParam(name = "pasion", required=true) String pasion,
+                                                          @RequestParam(name = "edad", required=true) Integer edad,
+                                                          @RequestParam(name = "sueldo", required=true) Double sueldo) {
 
         List<TarjetaDTO> tarjetaDTOS = null;
 
